@@ -1,0 +1,15 @@
+version: '2.4'
+services:
+  iam-ui:
+    container_name: iam-ui
+    extends:
+      file: docker-compose.common.yml
+      service: iam-ui
+    ports:
+      - "8080:80"
+    # environment:
+    networks:
+      - backend
+
+networks:
+  backend:

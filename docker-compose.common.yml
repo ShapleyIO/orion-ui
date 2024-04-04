@@ -1,0 +1,12 @@
+version: '2.4'
+services:
+  iam-ui:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: iam-ui
+      args:
+        - REVISION=${REVISION:-development}
+        - VERSION=${VERSION:-development}
+    image: shapley/iam-ui:${REVISION:-development}
+    tty: true
