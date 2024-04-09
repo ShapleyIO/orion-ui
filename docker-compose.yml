@@ -11,5 +11,18 @@ services:
     networks:
       - backend
 
+  iam-ui-dev:
+    container_name: iam-ui-dev
+    extends:
+      file: docker-compose.common.yml
+      service: iam-ui-dev
+    ports:
+      - "8081:80"
+    volumes:
+      - ./src:.
+    # environment:
+    networks:
+      - backend
+
 networks:
   backend:

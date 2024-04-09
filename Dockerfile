@@ -8,11 +8,17 @@ ENV PROJECT shapley-iam-ui
 WORKDIR /src/github.com/ShapleyIO/$PROJECT
 RUN git config --global --add safe.directory /src/github.com/ShapleyIO/$PROJECT
 
+# Create a new image for hot-reloading
+FROM base as iam-ui-dev
+RUN npm install
+CMD ["npm", "run", "serve"]
+
 FROM base as builder
 COPY . .
 RUN npm run build
 
 FROM nginx:stable-alpine as iam-ui
 COPY --from=builder /src/github.com/ShapleyIO/shapley-iam-ui/dist /usr/share/nginx/html
+COPY default.conf /etc/nginx/conf.d/default.conf
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]

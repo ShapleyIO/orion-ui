@@ -10,3 +10,12 @@ services:
         - VERSION=${VERSION:-development}
     image: shapley/iam-ui:${REVISION:-development}
     tty: true
+
+  iam-ui-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: iam-ui-dev
+      args:
+        - REVISION=${REVISION:-development}
+        - VERSION=${VERSION:-development}

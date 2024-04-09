@@ -9,11 +9,13 @@
   },
   "dependencies": {
     "core-js": "^3.8.3",
+    "crypto-js": "^4.2.0",
     "vue": "^3.2.13",
     "vue-class-component": "^8.0.0-0",
     "vue-router": "^4.0.3"
   },
   "devDependencies": {
+    "@types/crypto-js": "^4.2.2",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
     "@vue/cli-plugin-babel": "~5.0.0",
