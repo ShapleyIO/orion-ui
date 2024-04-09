@@ -1,4 +1,4 @@
-version: '2.4'
+version: '3.8'
 services:
   iam-ui:
     container_name: iam-ui
