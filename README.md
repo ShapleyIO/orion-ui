@@ -1,4 +1,4 @@
-# iam-ui
+# iam-ui-ts
 
 ## Project setup
 ```
