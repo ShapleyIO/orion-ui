@@ -1,20 +1,20 @@
-# deployment.yaml for iam-ui
+# deployment.yaml for orion-ui
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: iam-ui
+  name: orion-ui
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: iam-ui
+      app: orion-ui
   template:
     metadata:
       labels:
-        app: iam-ui
+        app: orion-ui
     spec:
       containers:
-      - name: iam-ui
-        image: shapl3y/iam-ui:latest
+      - name: orion-ui
+        image: shapley/orion-ui:latest
         ports:
         - containerPort: 8080
