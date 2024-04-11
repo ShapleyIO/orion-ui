@@ -1,0 +1,20 @@
+# deployment.yaml for iam-ui
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: iam-ui
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: iam-ui
+  template:
+    metadata:
+      labels:
+        app: iam-ui
+    spec:
+      containers:
+      - name: iam-ui
+        image: shapl3y/iam-ui:latest
+        ports:
+        - containerPort: 8080
